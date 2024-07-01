@@ -1,5 +1,5 @@
 def round_up(num):
-    if num % 1 < 0.5 and num % 1 != 0:
+    if num % 1 <= 0.5 and num % 1 != 0:
         num = round(num + 0.5)
         return num
     else:
@@ -26,14 +26,14 @@ if all([A, P, i]):
     from math import log
     n = log(A/(A - i * P) , 1+i)
     n = round_up(n)
-    print(f"> It will take {n//12} years and {n%12} months to repay this loan!")
+    print(f"It will take {n//12} years and {n%12} months to repay this loan!")
 elif all([P, n, i]):
     A = P * ((i * (1+i)**n) / ((1+i)**n -1))
     A = round_up(A)
-    print(f"> Your monthly payment = {A}!")
+    print(f"Your monthly payment = {A}!")
 elif all([A, n, i]):
     P = A / ((i * (1+i)**n)/((1+i)**n - 1))
-    print(f"> Your loan principal = {int(P)}!")
+    print(f"Your loan principal = {int(P)}!")
 
 
 
